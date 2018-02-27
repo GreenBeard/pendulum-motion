@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pendulum Motion</title>
+    <script type="text/javascript" src="./script.js"></script>
+</head>
+
+<body>
+    <center>
+        <canvas id="pendulum-canvas" width=500 height=500>
+
+        </canvas>
+        <br />
+        <table>
+            <tr>
+                <th>String length (m)</th>
+                <th>Weight mass (kg)</th>
+                <th>Start angle from base (degrees)</th>
+                <th>Iteration frequency (Hz)*</th>
+            </tr>
+            <tr>
+                <th>
+                    <input onchange="recreateAnimation()" id="string-length" />
+                </th>
+                <th>
+                    <input onchange="recreateAnimation()" id="weight-mass" />
+                </th>
+                <th>
+                    <input  type="range" min="0" max="90" onchange="recreateAnimation()" id="angle-degrees" />
+                </th>
+                <th>
+                    <input onchange="recreateAnimation()" id="iteration-frequency" />
+                </th>
+            </tr>
+        </table>
+        <br>
+        <div>
+            Gravity of 9.81 m s<sup>-2</sup> is assumed.
+        </div>
+        <div>
+            * This only impacts the high-angle calculations.
+        </div>
+    </center>
+</body>
+
+</html>
