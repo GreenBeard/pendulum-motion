@@ -1,11 +1,10 @@
-var g = -9.81;
-
 function recreateAnimation() {
   var canvas = document.getElementById("pendulum-canvas");
   if (canvas === null) {
     // In case the DOM has not loaded yet.
     return;
   }
+  stopLowAnglePendulum();
   var context = canvas.getContext("2d");
   context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -22,8 +21,7 @@ function recreateAnimation() {
     isNaN(angleDegrees) ||
     isNaN(iterationFrequency)
   ) {
-    console.log("Boo!");
-    context.font = "20px Georgia";
+    context.font = "20px";
     context.fillStyle = "red";
     context.fillText("One of the inputs is not a number", 0, canvas.height / 2);
     return;
@@ -34,7 +32,7 @@ function recreateAnimation() {
   console.log(".");
   // (0, 0) is the base of the pendulum.
   // Angle starts at 0 to the bottom
-  startLowAnglePendulum(g, stringLength, angleRadians);  
+  startLowAnglePendulum(-9.81, stringLength, angleRadians);
 }
 
 var animationTaskId;
