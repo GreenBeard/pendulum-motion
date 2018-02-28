@@ -40,7 +40,7 @@ function startLowAnglePendulum(gravity, stringLength, angleRadians) {
   var gravity = Math.abs(gravity);
   var stringLength = stringLength;
   var angleRadians = angleRadians;
-  animationTask = requestAnimationFrame(function animate(millisecondTime) {
+  animationTaskId = requestAnimationFrame(function animate(millisecondTime) {
     var canvas = document.getElementById("pendulum-canvas");
     var context = canvas.getContext("2d");
     var theta =
@@ -49,13 +49,13 @@ function startLowAnglePendulum(gravity, stringLength, angleRadians) {
 
     renderAnimation(context, canvas.width, canvas.height, theta, stringLength);
 
-    animationTask = requestAnimationFrame(animate);
+    animationTaskId = requestAnimationFrame(animate);
   });
 }
 
 function stopLowAnglePendulum() {
-  if (animationTask !== undefined) {
-    cancelAnimationFrame(animationTask);
+  if (animationTaskId !== undefined) {
+    cancelAnimationFrame(animationTaskId);
   }
 }
 
