@@ -17,7 +17,6 @@
                 <th>String length (m)</th>
                 <th>Weight mass (kg)</th>
                 <th>Start angle from base (degrees)</th>
-                <th>Iteration frequency (Hz)*</th>
             </tr>
             <tr>
                 <th>
@@ -28,9 +27,7 @@
                 </th>
                 <th>
                     <input  type="range" min="0" max="90" onchange="recreateAnimation()" id="angle-degrees" />
-                </th>
-                <th>
-                    <input onchange="recreateAnimation()" id="iteration-frequency" />
+                    <div id="angle-degrees-out"></div>
                 </th>
             </tr>
         </table>
@@ -40,6 +37,9 @@
         </div>
         <div>
             * This only impacts the high-angle calculations.
+        </div>
+        <div>
+            <button onclick="downloadCSV()">Download CSV</button>
         </div>
     </center>
 </body>
